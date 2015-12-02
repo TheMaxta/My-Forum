@@ -26,11 +26,16 @@ class PostsController < ApplicationController
 			end
 	end
 	def edit
-
+		unless current_user == @post.user
+   		redirect_to(@post, notice: "You cannot edit this post") and return
+		end
 	end
 
 
 	def update
+		unless current_user == @post.user
+   		redirect_to(@post, notice: "You cannot edit this post") and return
+		end
 		if @post.update(post_params)
 			redirect_to @post
 		else 
@@ -40,9 +45,15 @@ class PostsController < ApplicationController
 
 	end
 	def delete
+		unless current_user == @post.user
+   		redirect_to(@post, notice: "You cannot edit this post") and return
+		end
 	end
 	
 	def destroy
+		unless current_user == @post.user
+   		redirect_to(@post, notice: "You cannot edit this post") and return
+		end
 		@post.destroy
 		redirect_to root_path
 	end

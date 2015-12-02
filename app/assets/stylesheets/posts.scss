@@ -1,3 +1,67 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+textarea {
+	width: 95%;
+	min-height: 300px;
+	border: 1px solid grey;
+	border-radius: .2em;
+	margin: 1em 0;
+}
+
+
+#post_title {
+	width: 85%;
+	height: 1.5em;
+	margin-left: .5em;
+	margin-bottom: 1em;
+	
+
+}
+label.string.optional {
+
+	font-weight: 600;
+    font-size: 1.3em;
+    letter-spacing: 0.09em;
+    color: #7F7F7F;
+}
+
+label.text.optional {
+	color: #397CAC;
+	font-size: 1.3em;
+	font-weight: 600;
+}
+
+#post_content {
+	margin-top: 1em;
+
+}
+
+input[type="submit"] {
+	background: #807E7E;
+	border: none;
+	color: white;
+	font-weight: 500;
+	padding: .5em 1em;
+	border-radius: .2em;
+	margin-top: .7em;
+}
+
+form#new_post {
+	background: none;
+
+}
+
+#new_post {
+    background: rgba(255, 255, 255, 0.91);
+    padding: 1.1em 3%;
+    border-radius: .4em;
+}
+
+div.input.string.optional.post_title {
+    margin-bottom: 1em;
+    border-bottom: 1px dotted #D1D1D1;
+
+}
+

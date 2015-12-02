@@ -1,16 +1,28 @@
 #post_content
 
 	%h1= @post.title
+	.author
+		%p
+		Author:
+		= @post.user.email
 	%p= @post.content
 
 	#comments
-		%h2= @post.comments.count
+		%h2
+		= @post.comments.count
 		Comments
 		= render @post.comments
 
 		%h3 Reply to thread
 		= render "comments/form"
 
-	= link_to "Edit", edit_post_path(@post)
+
+%br
+%br
+
+	= link_to "Edit", edit_post_path(@post), class: "button"
 	= link_to "Delete", post_path(@post), method: :delete, data: { confirm: "Are you sure you want to do this?" }, class: "button"	
-	= link_to "Home", root_path
+	= link_to "Home", root_path, class: "button"
+
+%br
+%br
