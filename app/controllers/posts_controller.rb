@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
 	before_action :find_post, only: [:show, :edit, :update, :destroy]
+	before_action :authenticate_user!, except: [:index, :show]
 	#this above line is just so we can write this out faster..
 	#the above methods will use the find_post method, so this just helps it happen faster
 
