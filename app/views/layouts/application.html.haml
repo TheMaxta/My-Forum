@@ -14,7 +14,7 @@
 				%p= link_to "Max's Rails Forum", root_path
 			#buttons
 				- if user_signed_in?
-					= @post = current_user.email
+					= link_to @post = current_user.email, edit_user_registration_path
 					= link_to "New Post", new_post_path
 					= link_to "Sign Out", destroy_user_session_path, :method => :delete
 

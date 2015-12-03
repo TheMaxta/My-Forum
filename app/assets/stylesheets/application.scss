@@ -51,6 +51,8 @@ p.alert {
 
 }
 
+
+
 .main_header:hover {
 	background: rgba(255, 255, 255, 0.90);
 
@@ -60,7 +62,7 @@ p.alert {
 
 	width: 100%;
 	margin: 0 auto;
-	background: rgba(255, 255, 255, 0.74);
+	background: rgba(255, 255, 255, 0.70);
 	#logo {
 		float: left;
 	 	a {
@@ -88,8 +90,24 @@ p.alert {
 		}
 		a:hover{
 			background-color: #4294CE;
-		}
+		}			
+
+			
+
+
+				
 	}
+	#buttons > a:first-child  {
+	    background: #AFADAD;
+	    color: black;
+	    font-weight: 500;
+
+	}
+	#buttons > a:first-child:hover  {
+	    background: #d1d1d1;
+	}
+
+
 }
 
 #posts {
@@ -234,9 +252,8 @@ p.alert {
 /* these alter devise css */
 label.email.optional{
 	padding-right: 2.5em
-}label.password.optional {
-	padding-right: .6em
-}
+	}
+
 
 input#user_email {
 	width: 30%
@@ -249,6 +266,9 @@ div.input.password.optional.user_password {
     input {
     	width: 30%
     }
+	label.password.optional {
+	padding-right: .6em
+}
 }
 label.boolean.optional {
 	padding-left: .6em;
@@ -269,7 +289,6 @@ label.boolean.optional {
 	div.input {
 		padding-bottom: 0.5em;
 	}
-
 	label.email {
 		padding-right: 10em;
 
@@ -286,11 +305,33 @@ label.boolean.optional {
 }
 
 /* end devise css */
+.edit {
+	input {
+		width: 30%;
+
+	}
+
+		label.email.required {
+			padding-right: 1.9em;
+
+		}
+		label.password.optional {
+			 padding-right: .3em;
+		}
+
+		label.password.required {
+			padding-right: 2em;
+		}
+		span.hint {
+			padding-left: 1.2em;
+			color: #397CAC;
+			font-size: .8em;
+		}
+		div.input.password.optional.user_password_confirmation {
+		    margin-bottom: 1.2em;
+
+		}
 
 
-
-
-
-
-
+		} /*.edit end*/
 
