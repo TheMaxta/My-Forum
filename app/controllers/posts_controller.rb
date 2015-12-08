@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-	before_action :find_post, only: [:show, :edit, :update, :destroy]
+	before_action :find_post, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
 	before_action :authenticate_user!, except: [:index, :show]
 	#this above line is just so we can write this out faster..
 	#the above methods will use the find_post method, so this just helps it happen faster
@@ -57,6 +57,17 @@ class PostsController < ApplicationController
 		@post.destroy
 		redirect_to root_path
 	end
+
+	def upvote
+		@post.upvote_by current_user
+		redirect_to :back
+	end
+
+	def downvote
+		@post.downvote_by current_user
+		redirect_to :back
+	end
+
 
  private
 
