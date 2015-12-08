@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+
 	before_action :authenticate_user!, except: [:index, :show]
 
 	def create
@@ -15,12 +16,14 @@ class CommentsController < ApplicationController
 	end
 
 
-	def edit		
+	def edit	
+
 		@post = Post.find(params[:post_id])
 		@comment = @post.comments.find(params[:id])
 	end
 
 	def update 
+
 		@post = Post.find(params[:post_id])
 		@comment = @post.comments.find(params[:id])
 
@@ -33,9 +36,27 @@ class CommentsController < ApplicationController
 
 
 	def destroy
-		@post = Post.find(params[:post_id])
+
 		@comment = @post.comments.find(params[:id])
 		@comment.destroy
 		redirect_to post_path(@post)
 	end
+
+	def upvote
+		@post = Post.find(params[:post_id])
+		@comment = @post.comments.find(params[:id])	
+		@comment.upvote_by current_user
+		redirect_to :back
+	end
+
+	def downvote
+		@post = Post.find(params[:post_id])
+		@comment = @post.comments.find(params[:id])
+		@comment.downvote_by current_user
+		redirect_to :back
+	end
+
+
+
+
 end
